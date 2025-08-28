@@ -348,7 +348,6 @@ Ao reportar problemas, inclua:
 6. **Screenshots** se relevante
 
 ### Links Úteis para Debug
-- **Lovable Editor:** [https://lovable.dev/projects/84a69d03-f82d-494b-87b9-3af4a9543388](https://lovable.dev/projects/84a69d03-f82d-494b-87b9-3af4a9543388)
 - **Supabase Dashboard:** [https://supabase.com/dashboard/project/vitxtbotmtxfytusptbf](https://supabase.com/dashboard/project/vitxtbotmtxfytusptbf)
 - **SQL Editor:** [https://supabase.com/dashboard/project/vitxtbotmtxfytusptbf/sql](https://supabase.com/dashboard/project/vitxtbotmtxfytusptbf/sql)
 - **Storage:** [https://supabase.com/dashboard/project/vitxtbotmtxfytusptbf/storage](https://supabase.com/dashboard/project/vitxtbotmtxfytusptbf/storage)
