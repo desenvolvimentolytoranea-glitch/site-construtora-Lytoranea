@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Construtora Lytorânea Design System - All colors MUST be HSL */
+
+@layer base {
+  :root {
+    /* Brand Colors - Lytorânea Identity */
+    --brand-red: 11 100% 43%;        /* #DD2C00 converted to HSL */
+    --brand-gray: 0 0% 46%;          /* #757575 converted to HSL */
+    --brand-black: 0 0% 8%;          /* #141414 converted to HSL */
+    --brand-white: 0 0% 100%;        /* #FFFFFF */
+    --bg-soft: 0 0% 97%;             /* #F7F7F7 */
+    --grid-line: 0 0% 8%;            /* rgba(20,20,20,0.06) for grid lines */
+    --focus: 11 100% 43%;            /* Brand red for accessibility focus */
+
+    /* Semantic Design Tokens */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    --primary: 11 100% 43%;           /* Brand red */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 97%;            /* Soft background */
+    --secondary-foreground: 0 0% 8%;
+
+    --muted: 0 0% 97%;
+    --muted-foreground: 0 0% 46%;    /* Brand gray */
+
+    --accent: 11 100% 43%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 11 100% 43%;             /* Brand red for focus */
+
+    --radius: 1rem;                  /* Rounded-2xl for buttons */
+
+  /* New tokens based on briefing */
+  --brand-red: 11 100% 43%;        /* #DD2C00 */
+  --ink: 0 0% 8%;                  /* #141414 texto principal */
+  --muted: 0 0% 46%;               /* #757575 texto secundário */
+  --white: 0 0% 100%;              /* #fff */
+  --bg: 0 0% 100%;                 /* #ffffff */
+  --grid: 0 0% 8%;                 /* rgba(20,20,20,.06) para grid */
+  --focus: 11 100% 43%;            /* Brand red for accessibility focus */
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 11 100% 43%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 11 100% 43%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 11 100% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Product Sans', Inter, Poppins, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  }
+
+  /* Typography Hierarchy */
+  h1, h2 {
+    @apply font-bold uppercase tracking-wide;
+  }
+
+  h3, h4 {
+    @apply font-semibold;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Grid Background Pattern (exactly as briefing) */
+  .grid-bg {
+    background-image: 
+      repeating-linear-gradient(0deg, hsl(var(--grid) / 0.06) 0 1px, transparent 1px 32px),
+      repeating-linear-gradient(90deg, hsl(var(--grid) / 0.06) 0 1px, transparent 1px 32px);
+  }
+
+  /* Hero Text Animation */
+  .hero-text-animate {
+    animation: fadeInOut 4s ease-in-out infinite;
+  }
+
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0; transform: translateY(10px); }
+    25%, 75% { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Card Overlay Effect */
+  .card-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, hsl(var(--brand-black) / 0.4), hsl(var(--brand-black) / 0.7));
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+
+  .card-overlay:hover::before {
+    opacity: 0.9;
+  }
+
+  .card-overlay .card-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Focus Styles for Accessibility */
+  .focus-visible {
+    @apply outline-none;
+  }
+
+  /* Skip Link */
+  .skip-link {
+    @apply absolute -top-10 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-md z-50 transition-all duration-200;
+  }
+
+  .skip-link:focus {
+    @apply top-4;
+  }
+}
